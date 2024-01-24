@@ -1,10 +1,8 @@
 # 💰 Analyzing E-Commerce Business Performance with SQL
 
-**Tool** : PostgreSQL
-
-**Visualization** : Microsoft Excel
-
-**Dataset** : Rakamin Academy - Ecommerce Data
+#### Tool : PostgreSQL
+#### Visualization : Microsoft Excel
+#### Dataset : Rakamin Academy - Ecommerce Data
 
 
 **Table of Contents**
