@@ -43,7 +43,7 @@ Dataset yang digunakan adalah dataset sebuah perusahaan eCommerce Brasil yang me
 4. Membuat dan mengeksport ERD (Entity Relationship Diagram)
 Click untuk melihat Queries
 Hasil ERD :
-![Alt text](https://mygithub/Analyzing-eCommerce-Business-Performance-with-SQL/assets/erd.png?raw=true)
+![Alt text](https://github.com/Analyzing-eCommerce-Business-Performance-with-SQL/assets/erd.png?raw=true)
 
 
 Gambar 1. Entity Relationship Diagram
