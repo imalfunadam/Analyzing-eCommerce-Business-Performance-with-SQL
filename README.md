@@ -62,21 +62,21 @@ Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan
 
 
 
-![Alt text](image-2.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Rata-rata%20MAU%20dan%20Pelanggan%20Baru.png?raw=true)
 Gambar 2. Grafik Rata-rata MAU dan Pelanggan Baru
 
 Secara keseluruhan perusahaan mengalami peningkakatan Monthly Active User serta pelanggan baru setiap tahunnya. Peningkatan yang signifikan terjadi pada tahun 2016 ke 2017, hal ini dikarenakan data transaksi pada tahun 2016 dimulai pada bulan September.
 
 
 
-![Alt text](image-3.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Jumlah%20Pelanggan%20yang%20Melakukan%20Repeat%20Order.png?raw=true)
 Gambar 3. Grafik Jumlah Pelanggan yang Melakukan Repeat Order
 
 Peningkatan yang signifikan juga terjadi pada jumlah pelanggan yang melakukan repeat order pada tahun 2016 hingga 2017. Namun pada tahun 2018 mengalami sedikit penurunan.
 
 
 
-![Alt text](image-4.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Rata-rata%20Frekuensi%20Order%20Pelanggan.png?raw=true)
 Gambar 4. Grafik Rata-rata Frekuensi Order Pelanggan
 
 Dari analisis dan grafik diatas dapat diketahui bahwa rata-rata pelanggan setiap tahunnya cenderung hanya melakukan order satu kali, artinya mayoritas pelanggan tidak melakukan repeat order.
@@ -87,24 +87,24 @@ Kualitas kategori produk tahunan dapat dianalisis dari total pendapatan, total p
 
 Click disini untuk melihat Queries
 Tabel 2. Hasil Analisis Total Kategori Produk Tahunan
-![Alt text](image-5.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Total%20Kategori%20Produk%20Tahunan.png?raw=true)
 
-![Alt text](image-6.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Total%20Revenue%20Pertahun.png?raw=true)
 Gambar 5. Grafik Total Revenue Pertahun
 
 Secara keseluruhan revenue perusahaan meningkat setiap tahun.
 
 
 
-![Alt text](image-7.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Total%20Revenue%20Top%20Produk%20Pertahun.png?raw=true)
 Gambar 6. Grafik Total Revenue Top Produk Pertahun
 
 Revenue yang dihasilkan dari top produk juga meningkat untuk setiap tahunnya. Selain itu setiap tahunnya memiliki jenis kategori top produk yang berbeda. Pada tahun 2018, perusahaan menghasilkan revenue paling tinggi dengan jenis karegori top produk kesehatan dan kecantikan (health_beauty).
 
 
 
-![Alt text](image-8.png)
-Gambar 7. Grafik Total Revenue Top Produk Pertahun
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Total%20Top%20Produk%20yang%20dibatalkan%20Pertahun.png?raw=true)
+Gambar 7. Grafik Total Top Produk yang dibatalkan Pertahun
 
 Produk yang sering dibatalkan oleh pelanggan untuk setiap tahunnya juga memiliki jenis kategori yang berbeda dan terus mengalami kenaikan. Tahun 2018 memiliki jumlah produk yang dibatalkan paling banyak dan memiliki jenis kategori yang sama dengan top produk yang paling banyak menghasilkan revenue. Hal tersebut dapat diduga karena jenis kategori kesehatan dan kecantikan sedang mendominasi pasar.
 
@@ -114,9 +114,9 @@ Tipe pembayaran yang digunakan pelanggan dapat dianalisis dari jenis pembayaran 
 
 Click untuk melihat Queries
 Tabel 3. Hasil Analisis Tipe Pembayaran yang Digunakan Pelanggan
-![Alt text](image-9.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan.png?raw=true)
 
-![Alt text](image-10.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan%20Pertahun.png?raw=true)
 Gambar 8. Grafik Tipe Pembayaran yang Digunakan Pelanggan Pertahun
 
 Mayoritas pelanggan melakukan pembayaran menggunakan kartu kredit dan cenderung mengalami peningkatan setiap tahunnya. Pembayaran menggunakan voucher meningkat pada tahun 2017, namun menurun pada tahun 2018. Hal tersebut dapat diduga karena ketersediaan voucher yang diberikan perusahaan lebih sedikit dari tahun lalu. Disisi lain, pelanggan yang melakukan pembayaran dengan kartu debit meningkat secara signifikan pada tahun 2018. Hal tersebut dapat diduga karena kemungkinan terdapat promosi pembayaran untuk kartu debit, sehingga banyak pelanggan yang tertarik untuk menggunakan metode tersebut.
