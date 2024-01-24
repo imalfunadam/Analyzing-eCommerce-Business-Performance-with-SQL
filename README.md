@@ -58,7 +58,7 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 
 Click untuk melihat Queries
 Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan
-![Alt text](image-1.png)
+![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan.png?raw=true)
 
 
 
