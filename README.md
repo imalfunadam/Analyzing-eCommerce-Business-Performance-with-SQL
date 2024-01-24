@@ -88,6 +88,7 @@ Kualitas kategori produk tahunan dapat dianalisis dari total pendapatan, total p
 
 Click disini untuk melihat Queries
 <h5 align="center">Tabel 2. Hasil Analisis Total Kategori Produk Tahunan</h5>
+
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Total%20Kategori%20Produk%20Tahunan.png?raw=true)
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Total%20Revenue%20Pertahun.png?raw=true)
@@ -115,6 +116,7 @@ Tipe pembayaran yang digunakan pelanggan dapat dianalisis dari jenis pembayaran 
 
 Click untuk melihat Queries
 <h5 align="center">Tabel 3. Hasil Analisis Tipe Pembayaran yang Digunakan Pelanggan</h5>
+
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan.png?raw=true)
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan%20Pertahun.png?raw=true)
