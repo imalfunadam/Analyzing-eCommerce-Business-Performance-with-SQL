@@ -1,22 +1,22 @@
 # 💰 Analyzing E-Commerce Business Performance with SQL
 
-Tool : PostgreSQL
-Visualization : Microsoft Excel
-Dataset : Rakamin Academy - Ecommerce Data
+**Tool** : PostgreSQL
+**Visualization** : Microsoft Excel
+**Dataset** : Rakamin Academy - Ecommerce Data
 
 
-Table of Contents
+**Table of Contents**
 
-STAGE 0: Problem Statement
-Background Story
-Objective
-STAGE 1: Data Preparation
-Create Database and ERD
-STAGE 2: Data Analysis
-Annual Customer Activity Growth
-Annual Product Category Quality
-Annual Payment Type Usage
-STAGE 3: Summary
+- STAGE 0: Problem Statement
+    - Background Story
+    - Objective
+- STAGE 1: Data Preparation
+    - Create Database and ERD
+- STAGE 2: Data Analysis
+    - Annual Customer Activity Growth
+    - Annual Product Category Quality
+    - Annual Payment Type Usage
+- STAGE 3: Summary
 
 
 ## 📂 STAGE 0: Problem Statement
