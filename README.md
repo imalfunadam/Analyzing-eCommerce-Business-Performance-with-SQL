@@ -63,7 +63,7 @@ Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan
 
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Rata-rata%20MAU%20dan%20Pelanggan%20Baru.png?raw=true)
-Gambar 2. Grafik Rata-rata MAU dan Pelanggan Baru
+<h1 align="center">Gambar 2. Grafik Rata-rata MAU dan Pelanggan Baru</h1>
 
 Secara keseluruhan perusahaan mengalami peningkakatan Monthly Active User serta pelanggan baru setiap tahunnya. Peningkatan yang signifikan terjadi pada tahun 2016 ke 2017, hal ini dikarenakan data transaksi pada tahun 2016 dimulai pada bulan September.
 
