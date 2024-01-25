@@ -72,8 +72,7 @@ SELECT year, FLOOR(<span class="pl-c1">AVG</span>(customer_total)) <span class="
   <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
   ) <span class="pl-k">AS</span> sub
 <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>
-;
+<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>;
 
 <span class="pl-c"><span class="pl-c">--</span>2 Menampilkan jumlah customer baru pada masing-masing tahun</span>
 SELECT year, <span class="pl-c1">COUNT</span>(customer_unique_id) <span class="pl-k">AS</span> total_new_customer
