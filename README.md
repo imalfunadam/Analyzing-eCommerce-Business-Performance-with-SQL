@@ -1,3 +1,22 @@
+/* CSS Styling */
+.pl-c {
+  /* Gaya atau styling untuk class pl-c di sini */
+  color: blue;
+  font-family: 'Courier New', monospace;
+}
+
+.pl-k {
+  /* Gaya atau styling untuk class pl-k di sini */
+  color: green;
+  font-weight: bold;
+}
+
+.pl-c1 {
+  /* Gaya atau styling untuk class pl-c1 di sini */
+  color: red;
+  font-style: italic;
+}
+
 # 💰 Analyzing E-Commerce Business Performance with SQL
 
 #### Tool : PostgreSQL
