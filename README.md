@@ -1,4 +1,4 @@
-# 💰 Analyzing E-Commerce Business Performance with SQL
+## 💰 Analyzing E-Commerce Business Performance with SQL
 
 #### Tool : PostgreSQL
 #### Visualization : Microsoft Excel
