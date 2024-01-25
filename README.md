@@ -80,7 +80,6 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 <details>
   <summary>Click untuk melihat Queries</summary>
 <div class="highlight highlight-source-sql notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">
-;</pre></details>
 ```
 --1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun
 SELECT year, FLOOR(AVG(customer_total)) AS avg_mau
@@ -223,8 +222,9 @@ FROM
   	ON ro.year = f.year
 GROUP BY 1, 2, 3, 4, 5
 ORDER BY 1
-;
-```
+;```
+</pre></details>
+
 <h5 align="center">Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan</h5>
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Pertumbuhan%20Aktivitas%20Pelanggan%20Tahunan.png?raw=true)
