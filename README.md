@@ -56,7 +56,6 @@ Gambar 1. Entity Relationship Diagram
 1. Annual Customer Activity Growth
 Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active user (MAU), pelanggan baru, pelanggan dengan repeat order, dan rata-rata order oleh pelanggan.
 
-Click untuk melihat Queries
 
 <details>
   <summary>Click untuk melihat Queries</summary>
