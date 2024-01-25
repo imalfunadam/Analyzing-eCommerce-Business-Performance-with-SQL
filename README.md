@@ -1,3 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new ClipboardJS('[clipboard="true"]');
+  });
+</script>
+
+
 # 💰 Analyzing E-Commerce Business Performance with SQL
 
 #### Tool : PostgreSQL
