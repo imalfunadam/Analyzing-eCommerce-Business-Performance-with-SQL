@@ -69,7 +69,7 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 <details>
   <summary>Click untuk melihat Queries</summary>
 <div class="highlight highlight-source-sql notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c"><span class="pl-c">--</span>1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun</span>
-SELECT year, FLOOR(<span class="pl-c1">AVG</span>(customer_total)) <span class="pl-k">AS</span> avg_mau
+SELECT year, FLOOR(<span class="pl-c1" style="color: red;">AVG</span>(customer_total)) <span class="pl-k">AS</span> avg_mau
 <span class="pl-k">FROM</span> (
   <span class="pl-k">SELECT</span> 
   	date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
