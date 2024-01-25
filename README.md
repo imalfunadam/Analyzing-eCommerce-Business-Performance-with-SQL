@@ -75,9 +75,7 @@ FROM (
   GROUP BY 1, 2
   ) AS sub
 GROUP BY 1
-ORDER BY 1;
-
-</pre></details>
+ORDER BY 1;</pre></details>
 
 <h5 align="center">Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan</h5>
 
