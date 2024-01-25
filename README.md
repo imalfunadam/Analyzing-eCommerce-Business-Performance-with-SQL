@@ -59,7 +59,7 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 
 <details>
   <summary>Click untuk melihat Queries</summary>
-<pre class="language-sql">
+<pre class="language-pgsql">
 
 -- Ini adalah contoh query SQL
 SELECT * FROM nama_tabel WHERE kondisi = 'nilai';
