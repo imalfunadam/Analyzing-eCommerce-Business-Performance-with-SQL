@@ -57,7 +57,7 @@ Gambar 1. Entity Relationship Diagram
 Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active user (MAU), pelanggan baru, pelanggan dengan repeat order, dan rata-rata order oleh pelanggan.
 
 
-<details>
+>
   <summary>Click untuk melihat Queries</summary>
 <pre class="language-pgsql">
 ```
@@ -77,7 +77,7 @@ FROM (
 GROUP BY 1
 ORDER BY 1;
 ```
-</pre></details>
+</pre>
 
 <h5 align="center">Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan</h5>
 
