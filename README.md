@@ -1,3 +1,4 @@
+.github/github.css
 /* CSS Styling */
 .pl-c {
   /* Gaya atau styling untuk class pl-c di sini */
@@ -78,148 +79,152 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 
 <details>
   <summary>Click untuk melihat Queries</summary>
-<div class="highlight highlight-source-sql notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c"><span class="pl-c">--</span>1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun</span>
-SELECT year, FLOOR(<span class="pl-c1" style="color: red;">AVG</span>(customer_total)) <span class="pl-k">AS</span> avg_mau
-<span class="pl-k">FROM</span> (
-  <span class="pl-k">SELECT</span> 
-  	date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  	date_part(<span class="pl-s"><span class="pl-pds">'</span>month<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> month,
-  	<span class="pl-c1">COUNT</span>(DISTINCT <span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>) <span class="pl-k">AS</span> customer_total
-  <span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  <span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  	<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  ) <span class="pl-k">AS</span> sub
-<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>;
-
-<span class="pl-c"><span class="pl-c">--</span>2 Menampilkan jumlah customer baru pada masing-masing tahun</span>
-SELECT year, <span class="pl-c1">COUNT</span>(customer_unique_id) <span class="pl-k">AS</span> total_new_customer
-<span class="pl-k">FROM</span> (
-  <span class="pl-k">SELECT</span>
-  	<span class="pl-c1">Min</span>(date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>)) <span class="pl-k">AS</span> year,
-  	<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>
-  <span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  <span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  	<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">2</span>
-  ) <span class="pl-k">AS</span> sub
-<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>
+<div class="highlight highlight-source-sql notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">
+;</pre></details>
+```
+--1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun
+SELECT year, FLOOR(AVG(customer_total)) AS avg_mau
+FROM (
+  SELECT 
+  	date_part('year', od.order_purchase_timestamp) AS year,
+  	date_part('month', od.order_purchase_timestamp) AS month,
+  	COUNT(DISTINCT cd.customer_unique_id) AS customer_total
+  FROM orders_dataset AS od
+  JOIN customers_dataset AS cd
+  	ON cd.customer_id = od.customer_id
+  GROUP BY 1, 2
+  ) AS sub
+GROUP BY 1
+ORDER BY 1
 ;
 
-<span class="pl-c"><span class="pl-c">--</span>3 Menampilkan jumlah customer repeat order pada masing-masing tahun</span>
-SELECT year, <span class="pl-c1">count</span>(customer_unique_id) <span class="pl-k">AS</span> total_customer_repeat
-<span class="pl-k">FROM</span> (
-  <span class="pl-k">SELECT</span>
-  	date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  	<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>,
-  	<span class="pl-c1">COUNT</span>(<span class="pl-c1">od</span>.<span class="pl-c1">order_id</span>) <span class="pl-k">AS</span> total_order
-  <span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  <span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  	<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  <span class="pl-k">HAVING</span> <span class="pl-c1">count</span>(<span class="pl-c1">2</span>) <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>
-  ) <span class="pl-k">AS</span> sub
-<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>
+--2 Menampilkan jumlah customer baru pada masing-masing tahun
+SELECT year, COUNT(customer_unique_id) AS total_new_customer
+FROM (
+  SELECT
+  	Min(date_part('year', od.order_purchase_timestamp)) AS year,
+  	cd.customer_unique_id
+  FROM orders_dataset AS od
+  JOIN customers_dataset AS cd
+  	ON cd.customer_id = od.customer_id
+  GROUP BY 2
+  ) AS sub
+GROUP BY 1
+ORDER BY 1
 ;
 
-<span class="pl-c"><span class="pl-c">--</span>4 Menampilkan rata-rata jumlah order yang dilakukan customer untuk masing-masing tahun</span>
-SELECT year, ROUND(<span class="pl-c1">AVG</span>(freq), <span class="pl-c1">3</span>) <span class="pl-k">AS</span> avg_frequency
-<span class="pl-k">FROM</span> (
-  <span class="pl-k">SELECT</span>
-  	date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  	<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>,
-  	<span class="pl-c1">COUNT</span>(order_id) <span class="pl-k">AS</span> freq
-  <span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  <span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  	<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  ) <span class="pl-k">AS</span> sub
-<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>
+--3 Menampilkan jumlah customer repeat order pada masing-masing tahun
+SELECT year, count(customer_unique_id) AS total_customer_repeat
+FROM (
+  SELECT
+  	date_part('year', od.order_purchase_timestamp) AS year,
+  	cd.customer_unique_id,
+  	COUNT(od.order_id) AS total_order
+  FROM orders_dataset AS od
+  JOIN customers_dataset AS cd
+  	ON cd.customer_id = od.customer_id
+  GROUP BY 1, 2
+  HAVING count(2) > 1
+  ) AS sub
+GROUP BY 1
+ORDER BY 1
 ;
 
-<span class="pl-c"><span class="pl-c">--</span>5 Menggabungkan ketiga metrik yang telah berhasil ditampilkan menjadi satu tampilan tabel</span>
-WITH cte_mau <span class="pl-k">AS</span> (
-  <span class="pl-k">SELECT</span> year, FLOOR(<span class="pl-c1">AVG</span>(customer_total)) <span class="pl-k">AS</span> avg_mau
-  <span class="pl-k">FROM</span> (
-  	<span class="pl-k">SELECT</span> 
-  		date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  		date_part(<span class="pl-s"><span class="pl-pds">'</span>month<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> month,
-  		<span class="pl-c1">COUNT</span>(DISTINCT <span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>) <span class="pl-k">AS</span> customer_total
-  	<span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  	<span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  		<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  	<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  	) <span class="pl-k">AS</span> sub
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
+--4 Menampilkan rata-rata jumlah order yang dilakukan customer untuk masing-masing tahun
+SELECT year, ROUND(AVG(freq), 3) AS avg_frequency
+FROM (
+  SELECT
+  	date_part('year', od.order_purchase_timestamp) AS year,
+  	cd.customer_unique_id,
+  	COUNT(order_id) AS freq
+  FROM orders_dataset AS od
+  JOIN customers_dataset AS cd
+  	ON cd.customer_id = od.customer_id
+  GROUP BY 1, 2
+  ) AS sub
+GROUP BY 1
+ORDER BY 1
+;
+
+--5 Menggabungkan ketiga metrik yang telah berhasil ditampilkan menjadi satu tampilan tabel
+WITH cte_mau AS (
+  SELECT year, FLOOR(AVG(customer_total)) AS avg_mau
+  FROM (
+  	SELECT 
+  		date_part('year', od.order_purchase_timestamp) AS year,
+  		date_part('month', od.order_purchase_timestamp) AS month,
+  		COUNT(DISTINCT cd.customer_unique_id) AS customer_total
+  	FROM orders_dataset AS od
+  	JOIN customers_dataset AS cd
+  		ON cd.customer_id = od.customer_id
+  	GROUP BY 1, 2
+  	) AS sub
+  GROUP BY 1
 ),
 
-cte_new_cust <span class="pl-k">AS</span> (
-  <span class="pl-k">SELECT</span> year, <span class="pl-c1">COUNT</span>(customer_unique_id) <span class="pl-k">AS</span> total_new_customer
-  <span class="pl-k">FROM</span> (
-  	<span class="pl-k">SELECT</span>
-  		<span class="pl-c1">Min</span>(date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>)) <span class="pl-k">AS</span> year,
-  		<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>
-  	<span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  	<span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  		<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  	<span class="pl-k">GROUP BY</span> <span class="pl-c1">2</span>
-  	) <span class="pl-k">AS</span> sub
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
+cte_new_cust AS (
+  SELECT year, COUNT(customer_unique_id) AS total_new_customer
+  FROM (
+  	SELECT
+  		Min(date_part('year', od.order_purchase_timestamp)) AS year,
+  		cd.customer_unique_id
+  	FROM orders_dataset AS od
+  	JOIN customers_dataset AS cd
+  		ON cd.customer_id = od.customer_id
+  	GROUP BY 2
+  	) AS sub
+  GROUP BY 1
 ),
 
-cte_repeat_order <span class="pl-k">AS</span> (
-  <span class="pl-k">SELECT</span> year, <span class="pl-c1">count</span>(customer_unique_id) <span class="pl-k">AS</span> total_customer_repeat
-  <span class="pl-k">FROM</span> (
-  	<span class="pl-k">SELECT</span>
-  		date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  		<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>,
-  		<span class="pl-c1">COUNT</span>(<span class="pl-c1">od</span>.<span class="pl-c1">order_id</span>) <span class="pl-k">AS</span> total_order
-  	<span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  	<span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  		<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  	<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  	<span class="pl-k">HAVING</span> <span class="pl-c1">count</span>(<span class="pl-c1">2</span>) <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>
-  	) <span class="pl-k">AS</span> sub
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
+cte_repeat_order AS (
+  SELECT year, count(customer_unique_id) AS total_customer_repeat
+  FROM (
+  	SELECT
+  		date_part('year', od.order_purchase_timestamp) AS year,
+  		cd.customer_unique_id,
+  		COUNT(od.order_id) AS total_order
+  	FROM orders_dataset AS od
+  	JOIN customers_dataset AS cd
+  		ON cd.customer_id = od.customer_id
+  	GROUP BY 1, 2
+  	HAVING count(2) > 1
+  	) AS sub
+  GROUP BY 1
 ),
 
-cte_frequency <span class="pl-k">AS</span> (
-  <span class="pl-k">SELECT</span> year, ROUND(<span class="pl-c1">AVG</span>(freq), <span class="pl-c1">3</span>) <span class="pl-k">AS</span> avg_frequency
-  <span class="pl-k">FROM</span> (
-  	<span class="pl-k">SELECT</span>
-  		date_part(<span class="pl-s"><span class="pl-pds">'</span>year<span class="pl-pds">'</span></span>, <span class="pl-c1">od</span>.<span class="pl-c1">order_purchase_timestamp</span>) <span class="pl-k">AS</span> year,
-  		<span class="pl-c1">cd</span>.<span class="pl-c1">customer_unique_id</span>,
-  		<span class="pl-c1">COUNT</span>(order_id) <span class="pl-k">AS</span> freq
-  	<span class="pl-k">FROM</span> orders_dataset <span class="pl-k">AS</span> od
-  	<span class="pl-k">JOIN</span> customers_dataset <span class="pl-k">AS</span> cd
-  		<span class="pl-k">ON</span> <span class="pl-c1">cd</span>.<span class="pl-c1">customer_id</span> <span class="pl-k">=</span> <span class="pl-c1">od</span>.<span class="pl-c1">customer_id</span>
-  	<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>
-  	) <span class="pl-k">AS</span> sub
-  <span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>
+cte_frequency AS (
+  SELECT year, ROUND(AVG(freq), 3) AS avg_frequency
+  FROM (
+  	SELECT
+  		date_part('year', od.order_purchase_timestamp) AS year,
+  		cd.customer_unique_id,
+  		COUNT(order_id) AS freq
+  	FROM orders_dataset AS od
+  	JOIN customers_dataset AS cd
+  		ON cd.customer_id = od.customer_id
+  	GROUP BY 1, 2
+  	) AS sub
+  GROUP BY 1
 )
 
-<span class="pl-k">SELECT</span>
-  <span class="pl-c1">mau</span>.<span class="pl-c1">year</span> <span class="pl-k">AS</span> year,
+SELECT
+  mau.year AS year,
   avg_mau,
   total_new_customer,
   total_customer_repeat,
   avg_frequency
-<span class="pl-k">FROM</span>
-  cte_mau <span class="pl-k">AS</span> mau
-  <span class="pl-k">JOIN</span> cte_new_cust <span class="pl-k">AS</span> nc
-  	<span class="pl-k">ON</span> <span class="pl-c1">mau</span>.<span class="pl-c1">year</span> <span class="pl-k">=</span> <span class="pl-c1">nc</span>.<span class="pl-c1">year</span>
-  <span class="pl-k">JOIN</span> cte_repeat_order <span class="pl-k">AS</span> ro
-  	<span class="pl-k">ON</span> <span class="pl-c1">nc</span>.<span class="pl-c1">year</span> <span class="pl-k">=</span> <span class="pl-c1">ro</span>.<span class="pl-c1">year</span>
-  <span class="pl-k">JOIN</span> cte_frequency <span class="pl-k">AS</span> f
-  	<span class="pl-k">ON</span> <span class="pl-c1">ro</span>.<span class="pl-c1">year</span> <span class="pl-k">=</span> <span class="pl-c1">f</span>.<span class="pl-c1">year</span>
-<span class="pl-k">GROUP BY</span> <span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>
-<span class="pl-k">ORDER BY</span> <span class="pl-c1">1</span>
-;</pre></details>
-
+FROM
+  cte_mau AS mau
+  JOIN cte_new_cust AS nc
+  	ON mau.year = nc.year
+  JOIN cte_repeat_order AS ro
+  	ON nc.year = ro.year
+  JOIN cte_frequency AS f
+  	ON ro.year = f.year
+GROUP BY 1, 2, 3, 4, 5
+ORDER BY 1
+;
+```
 <h5 align="center">Tabel 1. Hasil Analisis Pertumbuhan Aktivitas Pelanggan Tahunan</h5>
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Pertumbuhan%20Aktivitas%20Pelanggan%20Tahunan.png?raw=true)
