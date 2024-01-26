@@ -326,7 +326,6 @@ JOIN canceled_order AS co
 JOIN most_canceled_category AS mcc
   ON co.year = mcc.year
 GROUP BY 1, 2, 3, 4, 5, 6, 7;```
-
   </pre>
 </details>
 <h5 align="center">Tabel 2. Hasil Analisis Total Kategori Produk Tahunan</h5>
