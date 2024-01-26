@@ -1,9 +1,3 @@
-<head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-<script>
-  new ClipboardJS('.btn');
-</script>
-</head>
 ## 💰 Analyzing E-Commerce Business Performance with SQL
 
 #### Tool : PostgreSQL
@@ -66,8 +60,6 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 <details>
   <summary>Click untuk melihat Queries</summary>
   <pre class="language-pgsql"  clipboard="true">
-  <code id="pgsql-query">
-  <button class="btn" data-clipboard-target="#pgsql-query">Salin Query</button>
   ```pgsql
   --1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun
   SELECT year, FLOOR(AVG(customer_total)) AS avg_mau
@@ -206,7 +198,6 @@ FROM
   	ON ro.year = f.year
 GROUP BY 1, 2, 3, 4, 5
 ORDER BY 1;```
-    </code>
   </pre>
 </details>
 
