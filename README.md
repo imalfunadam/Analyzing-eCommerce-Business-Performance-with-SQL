@@ -63,6 +63,8 @@ Pertumbuhan aktivitas pelanggan tahunan dapat dianalisis dari Monthly active use
 <details>
   <summary>Click untuk melihat Queries</summary>
   <pre class="language-pgsql"  clipboard="true">
+  <code id="pgsql-query">
+  <button class="btn" data-clipboard-target="#pgsql-query">Salin Query</button>
   ```pgsql
   --1 Menampilkan rata-rata jumlah customer aktif bulanan (monthly active user) untuk setiap tahun
   SELECT year, FLOOR(AVG(customer_total)) AS avg_mau
@@ -201,6 +203,7 @@ FROM
   	ON ro.year = f.year
 GROUP BY 1, 2, 3, 4, 5
 ORDER BY 1;```
+    </code>
   </pre>
 </details>
 
