@@ -1,5 +1,8 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
 </head>
 ## 💰 Analyzing E-Commerce Business Performance with SQL
 
