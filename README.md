@@ -197,8 +197,7 @@ FROM
   JOIN cte_frequency AS f
   	ON ro.year = f.year
 GROUP BY 1, 2, 3, 4, 5
-ORDER BY 1;
-  ```
+ORDER BY 1;```
   </pre>
 </details>
 
