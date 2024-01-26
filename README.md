@@ -358,7 +358,7 @@ Tipe pembayaran yang digunakan pelanggan dapat dianalisis dari jenis pembayaran 
 <details>
   <summary>Click untuk melihat Queries</summary>
   <pre class="language-pgsql"  clipboard="true">
-    ```pgsql
+```pgsql
 -- 1) Menampilkan jumlah penggunaan masing-masing tipe pembayaran secara all time diurutkan dari yang terfavorit
 SELECT payment_type, COUNT(1) 
 FROM order_payments_dataset
@@ -383,8 +383,7 @@ FROM (
   GROUP BY 1, 2
   ) AS sub
 GROUP BY 1
-ORDER BY 2 DESC;
-    ```
+ORDER BY 2 DESC;```
   </pre>
 </details>
 <h5 align="center">Tabel 3. Hasil Analisis Tipe Pembayaran yang Digunakan Pelanggan</h5>
