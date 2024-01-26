@@ -1,3 +1,6 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+</head>
 ## 💰 Analyzing E-Commerce Business Performance with SQL
 
 #### Tool : PostgreSQL
@@ -231,7 +234,12 @@ Dari analisis dan grafik diatas dapat diketahui bahwa rata-rata pelanggan setiap
 ## 2. Annual Product Category Quality
 Kualitas kategori produk tahunan dapat dianalisis dari total pendapatan, total pembatalan pesanan, kategori top produk dan kategori produk yang paling banyak dibatalkan.
 
-Click disini untuk melihat Queries
+<details>
+  <summary>Click untuk melihat Queries</summary>
+  <pre class="language-pgsql"  clipboard="true">
+
+  </pre>
+</details>
 <h5 align="center">Tabel 2. Hasil Analisis Total Kategori Produk Tahunan</h5>
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Total%20Kategori%20Produk%20Tahunan.png?raw=true)
