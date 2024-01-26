@@ -355,7 +355,38 @@ Produk yang sering dibatalkan oleh pelanggan untuk setiap tahunnya juga memiliki
 ## 3. Annual Payment Type Usage
 Tipe pembayaran yang digunakan pelanggan dapat dianalisis dari jenis pembayaran favorit dan jumlah penggunaan untuk setiap jenis pembayaran pertahun.
 
-Click untuk melihat Queries
+<details>
+  <summary>Click untuk melihat Queries</summary>
+  <pre class="language-pgsql"  clipboard="true">
+    ```pgsql
+-- 1) Menampilkan jumlah penggunaan masing-masing tipe pembayaran secara all time diurutkan dari yang terfavorit
+SELECT payment_type, COUNT(1) 
+FROM order_payments_dataset
+GROUP BY 1
+ORDER BY 2 DESC;
+
+-- 2)Menampilkan detail informasi jumlah penggunaan masing-masing tipe pembayaran untuk setiap tahun
+SELECT
+  payment_type,
+  SUM(CASE WHEN year = 2016 THEN total ELSE 0 END) AS "2016",
+  SUM(CASE WHEN year = 2017 THEN total ELSE 0 END) AS "2017",
+  SUM(CASE WHEN year = 2018 THEN total ELSE 0 END) AS "2018",
+  SUM(total) AS sum_payment_type_usage
+FROM (
+  SELECT 
+  	date_part('year', od.order_purchase_timestamp) as year,
+  	opd.payment_type,
+  	COUNT(opd.payment_type) AS total
+  FROM orders_dataset AS od
+  JOIN order_payments_dataset AS opd 
+  	ON od.order_id = opd.order_id
+  GROUP BY 1, 2
+  ) AS sub
+GROUP BY 1
+ORDER BY 2 DESC;
+    ```
+  </pre>
+</details>
 <h5 align="center">Tabel 3. Hasil Analisis Tipe Pembayaran yang Digunakan Pelanggan</h5>
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan.png?raw=true)
