@@ -391,7 +391,7 @@ ORDER BY 2 DESC;```
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Hasil%20Analisis%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan.png?raw=true)
 
 ![Alt text](https://github.com/imalfunadam/Analyzing-eCommerce-Business-Performance-with-SQL/blob/main/assets/Grafik%20Tipe%20Pembayaran%20yang%20Digunakan%20Pelanggan%20Pertahun.png?raw=true)
-Gambar 8. Grafik Tipe Pembayaran yang Digunakan Pelanggan Pertahun<h5 align="center">TGambar 8. Grafik Tipe Pembayaran yang Digunakan Pelanggan Pertahun</h5>
+<h5 align="center">Gambar 8. Grafik Tipe Pembayaran yang Digunakan Pelanggan Pertahun</h5>
 
 Mayoritas pelanggan melakukan pembayaran menggunakan kartu kredit dan cenderung mengalami peningkatan setiap tahunnya. Pembayaran menggunakan voucher meningkat pada tahun 2017, namun menurun pada tahun 2018. Hal tersebut dapat diduga karena ketersediaan voucher yang diberikan perusahaan lebih sedikit dari tahun lalu. Disisi lain, pelanggan yang melakukan pembayaran dengan kartu debit meningkat secara signifikan pada tahun 2018. Hal tersebut dapat diduga karena kemungkinan terdapat promosi pembayaran untuk kartu debit, sehingga banyak pelanggan yang tertarik untuk menggunakan metode tersebut.
 
